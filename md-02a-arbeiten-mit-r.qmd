@@ -1,0 +1,31 @@
+---
+title: "Arbeiten mit Quarto und R"
+format:
+  html:
+    embed-resources: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+
+## R-Pakete laden & Daten importieren
+
+## Daten erkunden 
+
+## Daten transformieren - Eingrenzen
+
+-   Tastaturkürzel für den Pipe-Operator: Ctrl / Cmd + Shift + M
+-   Tastaturkürzel für Zuweisungsoperator: Alt + -
+
+## Daten visualisieren
+
+```{r}
+ggplot(data = ___,
+       mapping = aes(x = ___,
+                     y = lifeExp)) +
+  geom_boxplot()
+```
+
+## Daten kommunizieren
+
+-   Das Dokument in das HTML-Format umwandeln (Render) und eventuelle Fehler beheben
