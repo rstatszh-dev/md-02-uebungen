@@ -1,0 +1,147 @@
+---
+title: "Daten visualisieren mit ggplot2"
+format:
+  html:
+    embed-resources: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+
+## R-Pakete laden & Daten importieren
+
+```{r}
+library(ggplot2)
+library(ggthemes)
+library(ggridges)
+library(palmerpenguins)
+```
+
+## Daten erkunden
+
+```{r}
+head(penguins)
+str(penguins)
+```
+
+## Daten visualisieren mit ggplot2
+
+### Funktionen und Argumente
+
+-   Funktionen: `ggplot()`, `aes()`, `geom_point()`
+-   Argumente: data, mapping, color
+
+```{r}
+
+```
+
+### Variablen visuellen Eigenschaften zuordnen (EN: aesthetic mapping). 
+
+-   Optionen: x, y, color, shape, size, alpha
+
+```{r}
+
+```
+
+### Visuelle Eigenschaften verändern
+
+```{r}
+
+```
+
+### Farbskala anpassen
+
+```{r}
+
+
+```
+
+```{r}
+
+
+```
+
+### Facetten 
+
+Tastaturkürzel für die Tilde (\~):
+
+-   CH-Tastatur Windows/Mac: Alt/Option + -
+
+```{r}
+ggplot(data = penguins,
+       mapping = aes(x = flipper_length_mm,
+                     y = body_mass_g)) +
+  geom_point() 
+```
+
+```{r}
+ggplot(data = penguins,
+       mapping = aes(x = flipper_length_mm,
+                     y = body_mass_g)) +
+  geom_point()
+```
+
+### Themes
+
+Einige Codes in diesem Abschnitt sind bereits vorbereitet, wir werden weitere Codes zusammen hinzufügen.
+
+```{r}
+
+ggplot(data = penguins,
+       mapping = aes(x = flipper_length_mm, 
+                     y = body_mass_g, 
+                     color = species,
+                     shape = species)) +
+  geom_point(size = 5, alpha = 0.7) +
+  scale_color_colorblind() +
+  theme_minimal()
+
+```
+
+## Visualisierung von Verteilungen
+
+### Kategorische Variablen
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+### Numerische kontinuierliche Variablen
+
+Der Code in diesem Abschnitt ist bereits vorbereitet, wir werden die Code-Blöcke gemeinsam durchgehen.
+
+```{r}
+ggplot(data = penguins,
+       mapping = aes(x = body_mass_g)) +
+  geom_histogram()
+```
+
+```{r}
+ggplot(data = penguins,
+       mapping = aes(x = body_mass_g,
+                     fill = species)) +
+  geom_histogram()
+```
+
+```{r}
+ggplot(data = penguins,
+       mapping = aes(x = body_mass_g,
+                     fill = species)) +
+  geom_density()
+```
+
+```{r}
+ggplot(data = penguins,
+       mapping = aes(x = body_mass_g,
+                     y = species,
+                     fill = species)) +
+  geom_density_ridges()
+```
+
+## Daten kommunizieren
+
+-   Das Dokument in das HTML-Format umwandeln (Render) und eventuelle Fehler beheben.
