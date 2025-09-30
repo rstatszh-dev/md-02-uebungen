@@ -10,6 +10,8 @@ editor_options:
 
 ## R-Pakete laden & Daten importieren
 
+Wir laden die notwendigen Pakete für die Datenvisualisierung und den Pinguine-Datensatz.
+
 ```{r}
 library(ggplot2)
 library(ggthemes)
@@ -19,6 +21,8 @@ library(palmerpenguins)
 
 ## Daten erkunden
 
+Schauen wir uns die Struktur und die ersten Zeilen des Pinguine-Datensatzes an.
+
 ```{r}
 head(penguins)
 str(penguins)
@@ -26,7 +30,11 @@ str(penguins)
 
 ## Daten visualisieren mit ggplot2
 
+Wir werden Schritt für Schritt Visualisierungen mit der Grammatik der Grafiken von ggplot2 erstellen.
+
 ### Funktionen und Argumente
+
+Die grundlegenden Bausteine von ggplot2 sind Funktionen und ihre Argumente.
 
 -   Funktionen: `ggplot()`, `aes()`, `geom_point()`
 -   Argumente: data, mapping, color
@@ -35,7 +43,9 @@ str(penguins)
 
 ```
 
-### Variablen visuellen Eigenschaften zuordnen (EN: aesthetic mapping). 
+### Variablen visuellen Eigenschaften zuordnen (EN: aesthetic mapping)
+
+Weise Datenvariablen visuellen Eigenschaften wie Position, Farbe und Form zu.
 
 -   Optionen: x, y, color, shape, size, alpha
 
@@ -45,23 +55,29 @@ str(penguins)
 
 ### Visuelle Eigenschaften verändern
 
+Passe das Aussehen mit festen Werten anstatt mit Datenzuweisungen an.
+
 ```{r}
 
 ```
 
 ### Farbskala anpassen
 
-```{r}
-
-
-```
+Ändere die Standard-Farbpaletten, um Zugänglichkeit und Ästhetik zu verbessern.
 
 ```{r}
 
 
 ```
 
-### Facetten 
+```{r}
+
+
+```
+
+### Facetten
+
+Erstelle kleine Vielfache, indem du die Daten in Panels aufteilst. Einige Codes in diesem Abschnitt sind bereits vorbereitet, wir werden weitere Codes zusammen hinzufügen.
 
 Tastaturkürzel für die Tilde (\~):
 
@@ -83,13 +99,13 @@ ggplot(data = penguins,
 
 ### Themes
 
-Einige Codes in diesem Abschnitt sind bereits vorbereitet, wir werden weitere Codes zusammen hinzufügen.
+Wende vorgefertigte Themes an, um das Gesamtbild deiner Plots zu ändern. Einige Codes in diesem Abschnitt sind bereits vorbereitet, wir werden weitere Codes zusammen hinzufügen.
 
 ```{r}
 
 ggplot(data = penguins,
-       mapping = aes(x = flipper_length_mm, 
-                     y = body_mass_g, 
+       mapping = aes(x = flipper_length_mm,
+                     y = body_mass_g,
                      color = species,
                      shape = species)) +
   geom_point(size = 5, alpha = 0.7) +
@@ -100,7 +116,11 @@ ggplot(data = penguins,
 
 ## Visualisierung von Verteilungen
 
+Erkunde, wie Daten über verschiedene Kategorien und Werte verteilt sind.
+
 ### Kategorische Variablen
+
+Verwende Balkendiagramme, um Häufigkeiten oder Anteile kategorischer Daten zu zeigen.
 
 ```{r}
 
@@ -112,7 +132,7 @@ ggplot(data = penguins,
 
 ### Numerische kontinuierliche Variablen
 
-Der Code in diesem Abschnitt ist bereits vorbereitet, wir werden die Code-Blöcke gemeinsam durchgehen.
+Visualisiere die Verteilung kontinuierlicher Daten mit Histogrammen und Dichteplots. Der Code in diesem Abschnitt ist bereits vorbereitet, wir werden die Code-Blöcke gemeinsam durchgehen.
 
 ```{r}
 ggplot(data = penguins,
@@ -143,5 +163,7 @@ ggplot(data = penguins,
 ```
 
 ## Daten kommunizieren
+
+Teile deine Analyse, indem du dieses Dokument in eine eigenständige HTML-Datei renderst.
 
 -   Das Dokument in das HTML-Format umwandeln (Render) und eventuelle Fehler beheben.
