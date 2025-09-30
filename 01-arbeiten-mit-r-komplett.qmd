@@ -10,38 +10,41 @@ editor_options:
 
 ## R-Pakete laden & Daten importieren
 
+Wir importieren Daten mit Paketen, die Zugang zu Datensätzen und Analysewerkzeugen bieten. Dies ist eine Möglichkeit, Daten zu importieren.
+
 ```{r}
-#| message: false
 library(ggplot2)
 library(dplyr)
 library(gapminder)
 ```
 
-## Daten erkunden 
+## Daten erkunden
+
+Der erste Schritt beim Arbeiten mit neuen, unbekannten Daten ist es, sie zu erkunden und die Variablen kennenzulernen.
 
 ```{r}
 head(gapminder)
 tail(gapminder)
-glimpse(gapminder)
 str(gapminder)
-nrow(gapminder)
-ncol(gapminder)
 ```
 
 ## Daten transformieren - Eingrenzen
 
-```{r}
-gapminder_2007 <- gapminder |> 
-  filter(year == 2007)
-```
+Wir ändern das Format der Daten, um sie für die Analyse vorzubereiten.
 
 -   Tastaturkürzel für den Pipe-Operator: Ctrl / Cmd + Shift + M
 -   Tastaturkürzel für Zuweisungsoperator: Alt + -
 
+```{r}
+gapminder_2007 <- gapminder |>
+  filter(year == 2007)
+```
+
 ## Daten visualisieren
 
+Wir erkunden weiter mit Visualisierungen oder bereiten unsere Analyse mit Visualisierungen vor.
+
 ```{r}
-#| eval: true
 ggplot(data = gapminder_2007,
        mapping = aes(x = continent,
                      y = lifeExp)) +
@@ -49,5 +52,7 @@ ggplot(data = gapminder_2007,
 ```
 
 ## Daten kommunizieren
+
+Schließlich kommunizieren wir, indem wir die Datei rendern und sie dann mit anderen teilen.
 
 -   Das Dokument in das HTML-Format umwandeln (Render) und eventuelle Fehler beheben

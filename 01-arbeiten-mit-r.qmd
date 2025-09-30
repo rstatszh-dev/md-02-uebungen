@@ -10,22 +10,41 @@ editor_options:
 
 ## R-Pakete laden & Daten importieren
 
-## Daten erkunden 
+Wir importieren Daten mit Paketen, die Zugang zu Datensätzen und Analysewerkzeugen bieten. Dies ist eine Möglichkeit, Daten zu importieren.
+
+```{r}
+
+```
+
+## Daten erkunden
+
+Der erste Schritt beim Arbeiten mit neuen, unbekannten Daten ist es, sie zu erkunden und die Variablen kennenzulernen.
+
+```{r}
+
+```
 
 ## Daten transformieren - Eingrenzen
+
+Wir ändern das Format der Daten, um sie für die Analyse vorzubereiten.
 
 -   Tastaturkürzel für den Pipe-Operator: Ctrl / Cmd + Shift + M
 -   Tastaturkürzel für Zuweisungsoperator: Alt + -
 
+```{r}
+
+```
+
 ## Daten visualisieren
 
+Wir erkunden weiter mit Visualisierungen oder bereiten unsere Analyse mit Visualisierungen vor.
+
 ```{r}
-ggplot(data = ___,
-       mapping = aes(x = ___,
-                     y = lifeExp)) +
-  geom_boxplot()
+
 ```
 
 ## Daten kommunizieren
+
+Schließlich kommunizieren wir, indem wir die Datei rendern und sie dann mit anderen teilen.
 
 -   Das Dokument in das HTML-Format umwandeln (Render) und eventuelle Fehler beheben
