@@ -3,8 +3,11 @@ title: "Daten visualisieren mit ggplot2"
 format:
   html:
     embed-resources: true
+execute:
+  message: false
+  warning: false
 editor: visual
-editor_options: 
+editor_options:
   chunk_output_type: console
 ---
 
@@ -16,7 +19,6 @@ Wir laden die notwendigen Pakete für die Datenvisualisierung und den Pinguine-D
 library(ggplot2)
 library(ggthemes)
 library(ggridges)
-library(dplyr)
 library(palmerpenguins)
 ```
 
@@ -91,13 +93,10 @@ ggplot(data = penguins,
   scale_color_colorblind()
 ```
 
-Variante 2: `scale_color_manual()` mit eigenen Farben. Wir nutzen hier nur die Pinguine der Insel Biscoe, indem wir die Daten mit `filter()` eingrenzen.
+Variante 2: `scale_color_manual()` mit eigenen Farben.
 
 ```{r}
-penguins_biscoe <- penguins |>
-  filter(island == "Biscoe")
-
-ggplot(data = penguins_biscoe,
+ggplot(data = penguins,
        mapping = aes(x = flipper_length_mm,
                      y = body_mass_g,
                      color = species,
