@@ -16,6 +16,7 @@ Wir laden die notwendigen Pakete für die Datenvisualisierung und den Pinguine-D
 library(ggplot2)
 library(ggthemes)
 library(ggridges)
+library(dplyr)
 library(palmerpenguins)
 ```
 
@@ -24,8 +25,7 @@ library(palmerpenguins)
 Schauen wir uns die Struktur und die ersten Zeilen des Pinguine-Datensatzes an.
 
 ```{r}
-head(penguins)
-str(penguins)
+
 ```
 
 ## Daten visualisieren mit ggplot2
@@ -36,8 +36,8 @@ Wir werden Schritt für Schritt Visualisierungen mit der Grammatik der Grafiken 
 
 Die grundlegenden Bausteine von ggplot2 sind Funktionen und ihre Argumente.
 
--   Funktionen: `ggplot()`, `aes()`, `geom_point()`
--   Argumente: data, mapping, color
+- Funktionen: `ggplot()`, `aes()`, `geom_point()`
+- Argumente: data, mapping, color
 
 ```{r}
 
@@ -47,7 +47,7 @@ Die grundlegenden Bausteine von ggplot2 sind Funktionen und ihre Argumente.
 
 Weise Datenvariablen visuellen Eigenschaften wie Position, Farbe und Form zu.
 
--   Optionen: x, y, color, shape, size, alpha
+- Optionen: x, y, color, shape, size, alpha
 
 ```{r}
 
@@ -63,12 +63,16 @@ Passe das Aussehen mit festen Werten anstatt mit Datenzuweisungen an.
 
 ### Farbskala anpassen
 
-Ändere die Standard-Farbpaletten, um Zugänglichkeit und Ästhetik zu verbessern.
+Ändere die Standard-Farbpaletten, um Zugänglichkeit und Ästhetik zu verbessern. Wir vergleichen zwei Varianten und schauen, welche besser zugänglich ist (Stichwort: Farbsehschwäche).
+
+Variante 1: `scale_color_colorblind()`
 
 ```{r}
 
 
 ```
+
+Variante 2: `scale_color_manual()` mit eigenen Farben.
 
 ```{r}
 
@@ -81,7 +85,8 @@ Erstelle kleine Vielfache, indem du die Daten in Panels aufteilst. Einige Codes 
 
 Tastaturkürzel für die Tilde (\~):
 
--   CH-Tastatur Windows/Mac: Alt/Option + -
+- CH-Tastatur Mac: Alt/Option + N
+- CH-Tastatur Windows: AltGr + ^, danach Leertaste
 
 ```{r}
 ggplot(data = penguins,
@@ -166,4 +171,4 @@ ggplot(data = penguins,
 
 Teile deine Analyse, indem du dieses Dokument in eine eigenständige HTML-Datei renderst.
 
--   Das Dokument in das HTML-Format umwandeln (Render) und eventuelle Fehler beheben.
+- Das Dokument in das HTML-Format umwandeln (Render) und eventuelle Fehler beheben.

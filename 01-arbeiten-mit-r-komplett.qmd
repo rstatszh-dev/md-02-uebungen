@@ -32,8 +32,8 @@ str(gapminder)
 
 Wir ändern das Format der Daten, um sie für die Analyse vorzubereiten.
 
--   Tastaturkürzel für den Pipe-Operator: Ctrl / Cmd + Shift + M
--   Tastaturkürzel für Zuweisungsoperator: Alt + -
+- Tastaturkürzel für den Pipe-Operator: Ctrl / Cmd + Shift + M
+- Tastaturkürzel für Zuweisungsoperator: Alt + -
 
 ```{r}
 gapminder_2007 <- gapminder |>
@@ -55,4 +55,4 @@ ggplot(data = gapminder_2007,
 
 Schließlich kommunizieren wir, indem wir die Datei rendern und sie dann mit anderen teilen.
 
--   Das Dokument in das HTML-Format umwandeln (Render) und eventuelle Fehler beheben
+- Das Dokument in das HTML-Format umwandeln (Render) und eventuelle Fehler beheben

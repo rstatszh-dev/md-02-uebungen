@@ -28,8 +28,8 @@ Der erste Schritt beim Arbeiten mit neuen, unbekannten Daten ist es, sie zu erku
 
 Wir ändern das Format der Daten, um sie für die Analyse vorzubereiten.
 
--   Tastaturkürzel für den Pipe-Operator: Ctrl / Cmd + Shift + M
--   Tastaturkürzel für Zuweisungsoperator: Alt + -
+- Tastaturkürzel für den Pipe-Operator: Ctrl / Cmd + Shift + M
+- Tastaturkürzel für Zuweisungsoperator: Alt + -
 
 ```{r}
 
@@ -47,4 +47,4 @@ Wir erkunden weiter mit Visualisierungen oder bereiten unsere Analyse mit Visual
 
 Schließlich kommunizieren wir, indem wir die Datei rendern und sie dann mit anderen teilen.
 
--   Das Dokument in das HTML-Format umwandeln (Render) und eventuelle Fehler beheben
+- Das Dokument in das HTML-Format umwandeln (Render) und eventuelle Fehler beheben
