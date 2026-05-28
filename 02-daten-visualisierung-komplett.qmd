@@ -16,6 +16,7 @@ Wir laden die notwendigen Pakete für die Datenvisualisierung und den Pinguine-D
 library(ggplot2)
 library(ggthemes)
 library(ggridges)
+library(dplyr)
 library(palmerpenguins)
 ```
 
@@ -36,8 +37,8 @@ Wir werden Schritt für Schritt Visualisierungen mit der Grammatik der Grafiken 
 
 Die grundlegenden Bausteine von ggplot2 sind Funktionen und ihre Argumente.
 
--   Funktionen: `ggplot()`, `aes()`, `geom_point()`
--   Argumente: data, mapping, color
+- Funktionen: `ggplot()`, `aes()`, `geom_point()`
+- Argumente: data, mapping, color
 
 ```{r}
 ggplot(data = penguins,
@@ -50,7 +51,7 @@ ggplot(data = penguins,
 
 Weise Datenvariablen visuellen Eigenschaften wie Position, Farbe und Form zu.
 
--   Optionen: x, y, color, shape, size, alpha
+- Optionen: x, y, color, shape, size, alpha
 
 ```{r}
 ggplot(data = penguins,
@@ -76,7 +77,9 @@ ggplot(data = penguins,
 
 ### Farbskala anpassen
 
-Ändere die Standard-Farbpaletten, um Zugänglichkeit und Ästhetik zu verbessern.
+Ändere die Standard-Farbpaletten, um Zugänglichkeit und Ästhetik zu verbessern. Wir vergleichen zwei Varianten und schauen, welche besser zugänglich ist (Stichwort: Farbsehschwäche).
+
+Variante 1: `scale_color_colorblind()`
 
 ```{r}
 ggplot(data = penguins,
@@ -86,20 +89,24 @@ ggplot(data = penguins,
                      shape = species)) +
   geom_point(size = 5, alpha = 0.7) +
   scale_color_colorblind()
-
 ```
 
-```{r}
+Variante 2: `scale_color_manual()` mit eigenen Farben. Wir nutzen hier nur die Pinguine der Insel Biscoe, indem wir die Daten mit `filter()` eingrenzen.
 
-ggplot(data = penguins,
+```{r}
+penguins_biscoe <- penguins |>
+  filter(island == "Biscoe")
+
+ggplot(data = penguins_biscoe,
        mapping = aes(x = flipper_length_mm,
                      y = body_mass_g,
                      color = species,
                      shape = species)) +
   geom_point(size = 5, alpha = 0.7) +
-  scale_color_manual(values = c("red", "blue", "green"))
-
+  scale_color_manual(values = c("red", "green", "blue"))
 ```
+
+Welche der beiden Varianten ist für Personen mit Farbsehschwäche besser geeignet? Warum?
 
 ### Facetten
 
@@ -107,7 +114,8 @@ Erstelle kleine Vielfache, indem du die Daten in Panels aufteilst. Einige Codes 
 
 Tastaturkürzel für die Tilde (\~):
 
--   CH-Tastatur Windows/Mac: Alt/Option + -
+- CH-Tastatur Mac: Alt/Option + N
+- CH-Tastatur Windows: AltGr + ^, danach Leertaste
 
 ```{r}
 ggplot(data = penguins,
@@ -199,4 +207,4 @@ ggplot(data = penguins,
 
 Teile deine Analyse, indem du dieses Dokument in eine eigenständige HTML-Datei renderst.
 
--   Das Dokument in das HTML-Format umwandeln (Render) und eventuelle Fehler beheben.
+- Das Dokument in das HTML-Format umwandeln (Render) und eventuelle Fehler beheben.
