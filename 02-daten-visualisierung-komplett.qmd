@@ -115,7 +115,7 @@ Erstelle kleine Vielfache, indem du die Daten in Panels aufteilst. Einige Codes 
 Tastaturkürzel für die Tilde (\~):
 
 - CH-Tastatur Mac: Alt/Option + N
-- CH-Tastatur Windows: AltGr + ^, danach Leertaste
+- CH-Tastatur Windows: AltGr + \^, danach Leertaste
 
 ```{r}
 ggplot(data = penguins,
